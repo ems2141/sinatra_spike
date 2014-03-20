@@ -1,5 +1,10 @@
 require 'sinatra'
 
-get '/app' do
-  "Hello Ellie hows it going!"
+
+get '/' do
+  erb :index
+end
+
+get '/items' do
+  erb :items
 end

@@ -1,11 +1,14 @@
+
 <html>
 <body>
 <a href="items/new">New Items</a>
 <h2>List of Items</h2>
 <ul>
-  <li>item 1<a href="/item/1">Show Item</a></li>
-  <li>item 2<a href="/item/2">Show Item</a></li>
-  <li>item 3<a href="/item/3">Show Item</a></li>
+  <%array_of_items = [Item.new(1, "Item1"), Item.new(2, "Item2"), Item.new(3, "Item3")]%>
+  <%array_of_items.each do |item|%>
+    <li><%=item.name%><a href="/items/<%=item.id%>">Show Item</a></li>
+  <%end%>
+
 </ul>
 </body>
 </html>

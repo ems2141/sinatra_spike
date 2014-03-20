@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/app' do
-  "Hello World!"
+  "Hello Ellie hows it going!"
 end

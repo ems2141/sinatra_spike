@@ -8,7 +8,7 @@ end
 
 get '/items' do
   filter = params[:filter]
-  array_of_items = ItemContainer.new.menu
+  array_of_items = ItemContainer.new.list_of_items
 
   @displayed_items = []
   array_of_items.each do |item|
@@ -23,3 +23,15 @@ get '/items' do
   erb :items
 end
 
+get '/items/new' do
+  erb :new
+end
+
+post '/items' do
+  name = params[:name]
+  items = ItemContainer.new
+  new_item = Item.new(items.list_of_items.length+1, name)
+  items.list_of_items << new_item
+  @displayed_items = items.list_of_items
+  erb :items
+end

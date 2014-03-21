@@ -30,8 +30,15 @@ end
 post '/items' do
   name = params[:name]
   items = ItemContainer.new
-  new_item = Item.new(items.list_of_items.length+1, name)
-  items.list_of_items << new_item
+  items.add_menu_item(name)
   @displayed_items = items.list_of_items
   erb :items
+end
+
+get'/items/:id' do
+  items = ItemContainer.new
+
+  @id = params[:id]
+  @foo = items.make_hash[@id.to_i]
+  erb :id
 end

@@ -7,4 +7,6 @@ class Item
     @id = id
     @name = name
   end
+
+
 end

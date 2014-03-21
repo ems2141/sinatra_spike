@@ -4,8 +4,7 @@
 <a href="items/new">New Items</a>
 <h2>List of Items</h2>
 <ul>
-  <%array_of_items = [Item.new(1, "Item1"), Item.new(2, "Item2"), Item.new(3, "Item3")]%>
-  <%array_of_items.each do |item|%>
+  <%@displayed_items.each do |item|%>
     <li><%=item.name%><a href="/items/<%=item.id%>">Show Item</a></li>
   <%end%>
 
